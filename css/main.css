@@ -1,0 +1,218 @@
+/*=============================================
+          typography
+================================================*/
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap'); */
+@font-face {
+    font-family: 'Open Sans';
+    src: url(./../fonts/OpenSans.woff2) format('woff2'),
+    url(./../fonts/OpenSans.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url(./../fonts/OpenSans-Light.woff2) format('woff2'),
+    url(./../fonts/OpenSans-Light.woff) format('woff');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url(./../fonts/OpenSans-Semibold.woff2) format('woff2'),
+    url(./../fonts/OpenSans-Semibold.woff) format('woff');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url(./../fonts/OpenSans-Bold.woff2) format('woff2'),
+    url(./../fonts/OpenSans-Bold.woff) format('woff');
+    font-weight: 700;
+}
+
+/* ==========================================
+              Website Resets
+============================================= */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+*::-moz-focus-inner {
+    border: 0;
+}
+
+*:focus {
+    outline: none;
+}
+
+/*=============================================
+         root, html,  and body styles
+================================================*/
+:root {
+    --clr-primary-100: hsla(210, 71%, 96%, 100%);
+    --clr-primary-200: hsla(210, 71%, 86%, 100%);
+    --clr-primary-300: hsla(210, 59%, 70%, 100%);
+    --clr-primary-400: hsla(210, 68%, 63%, 100%);
+    --clr-primary-500: hsla(210, 67%, 54%, 100%);
+    --clr-primary-600: hsla(210, 67%, 46%, 100%);
+    --clr-primary-700: hsla(210, 68%, 37%, 100%);
+    --clr-primary-800: hsla(210, 67%, 29%, 100%);
+
+    --clr-neutral-100: hsla(0, 0%, 98%, 100%);
+    --clr-neutral-200: hsla(0, 0%, 94%, 100%);
+    --clr-neutral-300: hsla(0, 0%, 85%, 100%);
+    --clr-neutral-400: hsla(0, 0%, 75%, 100%);
+    --clr-neutral-500: hsla(0, 0%, 60%, 100%);
+    --clr-neutral-600: hsla(0, 0%, 38%, 100%);
+    --clr-neutral-700: hsla(0, 0%, 19%, 100%);
+    --clr-neutral-800: hsla(0, 0%, 7%, 100%);
+
+    --clr-augmented-100: hsla(210, 15%, 58%, 100%);
+    --clr-augmented-200: hsla(210, 11%, 50%, 100%);
+    --clr-augmented-300: hsla(210, 11%, 36%, 100%);
+    --clr-augmented-400: hsla(210, 25%, 19%, 100%);
+
+    --ff-font-family: 'Open Sans' Arial, sans-serif;
+
+    --fw-font-weight-300: 300;
+    --fw-font-weight-600: 600;
+    --fw-font-weight-700: 700;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    background-image: radial-gradient(circle, #1c7fc2 0%, #009cdc 28%, #0d9ade 32%, #011844 100%);
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    /* font-family: var(--ff-font-family); */
+    font-weight: 300;
+    font-weight: var(--fw-font-weight-300);
+    font-size: 22px;
+    /* filter: blur(15px); */
+    transition: filter 0.5s;
+}
+
+
+/*=============================================
+        weather and weather__search
+================================================*/
+
+.weather {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+
+.weather__search {
+    width: 100%;
+    padding: 15px 10px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.15);
+    font-size: 20px;
+    color: inherit;
+    margin-bottom: 20px;
+    margin-bottom: 24px;
+}
+
+.weather__search::placeholder {
+    color: #fff;
+}
+
+/*=============================================
+      weather__today
+================================================*/
+
+.weather__today {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.weather__image {
+    width: 30vmin;
+    align-self: center;
+}
+
+.weather__city {
+    font-size: 36px;
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+.weather__day {
+    font-size: 30px;
+    margin: 10px 0;
+    margin-bottom: 24px;
+    font-weight: 400;
+}
+
+.weather__indicator {
+    margin-bottom: 24px;
+}
+.weather__indicator::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    margin-right: 10px;
+
+}
+
+.weather__indicator--humidity::before {
+    background-image: url(./../img/humidity.png);
+}
+
+.weather__indicator--wind::before {
+    background-image: url(./../img/wind.png);
+}
+
+.weather__indicator--pressure::before {
+    background-image: url(./../img/pressure.png);
+}
+
+.weather__temperature {
+    font-size: 60px;
+}
+
+/*=============================================
+          weather__forcast
+================================================*/
+
+.weather__forecast {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.weather__forecast__icon {
+    max-width: 50%;
+}
+
+.weather__forecast__item {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    margin: 0 10px 10px;
+    padding: 30px 5px 20px;
+    /* box-sizing: border-box; */
+    min-width: 150px;
+    width: calc(20% - 20px);
+    flex-grow: 1;
+}
